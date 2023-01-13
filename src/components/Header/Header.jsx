@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import {FaUsersCog} from "react-icons/fa"
 import {HiUserAdd} from "react-icons/hi"
+import { Link } from 'react-router-dom';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -57,23 +58,26 @@ export default function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-          
-          >
-          <FaUsersCog/>
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            User Management System
-          </Typography>
+       
+         <IconButton
+         size="large"
+         edge="start"
+         color="inherit"
+         aria-label="open drawer"
+         component={Link} to={'/'}
+       >
+       <FaUsersCog/>
+       </IconButton>
+       <Typography
+         variant="h6"
+         noWrap
+         component="div"
+         component={Link} to={'/'}
+         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+       >
+         User Management System
+       </Typography>
+    
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -83,16 +87,18 @@ export default function Header() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="open drawer"
-          sx={{ml:2}}
-        
-        >
-        <HiUserAdd/>
-        </IconButton>
+     
+        <IconButton
+        size="large"
+        edge="start"
+        color="inherit"
+        aria-label="open drawer"
+        sx={{ml:2}}
+        component={Link} to={'/add-user'}
+      >
+      <HiUserAdd/>
+      </IconButton>
+  
         </Toolbar>
       </AppBar>
     </Box>

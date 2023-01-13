@@ -18,37 +18,19 @@ const Features = () => {
   const handleChange = (event) => {
     setOrder(event.target.value);
   };
-  const buttonStyle = {
-    background: "#59CE8F",
-    borderRadius: "50px",
-    "&:hover": {
-      background: "#49bf7f",
-    },
-  };
+
   
   return (
-    <Container className="featues-section" sx={{ my: 4 }}>
-      <Box>
-        <Grid container >
-          <Grid item xs={6} md={3}>
-            <Box sx={{ width: 200,mt:3}}>
-              <Button
-                variant="contained"
-                sx={buttonStyle}
-                endIcon={<TbFileExport />}
-                className="export"
-              >
-                Export to CSV
-              </Button>
-            </Box>
-          </Grid>
-          <Grid item xs={6} md={3}>
+    <Container className="featues-section" sx={{ my: 2,background:"#1e2d39",py:3,boxShadow: 3,borderRadius:1}}>
+      <Box sx={{color:'white'}} >
+        <Grid container sx={{display:'flex',justifyContent:'center'}}>
+          <Grid item xs={12} md={4} sx={{display:'flex',justifyContent:'center'}}>
             <Box>
-              <Typography variant="h5" sx={{ textAlign: "center" }}>
+              <Typography variant="h5" align="center">
                 Filter by Gender
               </Typography>
-              <Box>
-                <FormControl sx={{ ml: 2 }}>
+              <Box  sx={{mt:2}}>
+                <FormControl>
                   <RadioGroup
                     row
                     aria-labelledby="demo-row-radio-buttons-group-label"
@@ -56,17 +38,33 @@ const Features = () => {
                   >
                     <FormControlLabel
                       value="All"
-                      control={<Radio />}
+                      
+                      control={<Radio defaultChecked sx={{
+                        color: '#1976d2',
+                        '&.Mui-checked': {
+                          color: '#1976d2',
+                        },
+                      }} />}
                       label="All"
                     />
                     <FormControlLabel
                       value="female"
-                      control={<Radio />}
+                      control={<Radio  sx={{
+                        color: '#1976d2',
+                        '&.Mui-checked': {
+                          color: '#1976d2',
+                        },
+                      }}/>}
                       label="Female"
                     />
                     <FormControlLabel
                       value="male"
-                      control={<Radio />}
+                      control={<Radio  sx={{
+                        color: '#1976d2',
+                        '&.Mui-checked': {
+                          color: '#1976d2',
+                        },
+                      }}/>}
                       label="Male"
                     />
                   </RadioGroup>
@@ -74,38 +72,39 @@ const Features = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={6} md={3}>
+          <Grid item xs={12} md={4} sx={{display:'flex',justifyContent:'center'}}>
             <Box>
-              <Typography variant="h5" sx={{ textAlign: "center" , mb:1}}>
+              <Typography variant="h5" align="center">
                 Sort by Value
               </Typography>
-              <Box sx={{ width: 200 , mx:'auto'}} >
+              <Box sx={{ width: 200,mt:2}} >
                 <FormControl fullWidth >
-                  <InputLabel id="demo-simple-select-label">Sort by </InputLabel>
+                  <InputLabel id="demo-simple-select-label"  sx={{color:'#fff',top:'-8px'}}>Sort by </InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={order}
                     label="order"
                     onChange={handleChange}
-                   
+                    sx={{color:'#fff'}}
+                    size="small" 
                   >
-                    <MenuItem value={10}>New to Old</MenuItem>
-                    <MenuItem value={20}>Old to New</MenuItem>
+                    <MenuItem value={'New to Old'}>New to Old</MenuItem>
+                    <MenuItem value={'Old to New'} >Old to New</MenuItem>
                    
                   </Select>
                 </FormControl>
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={6} md={3}>
-            <Box>
-              <Typography variant="h5" sx={{ textAlign: "center" }}>
+          <Grid item xs={12} md={4} sx={{display:'flex',justifyContent:'center'}}>
+            <Box >
+              <Typography variant="h5" align="center">
                 Filter by Status
               </Typography>
               <Box>
-              <Box>
-                <FormControl sx={{ ml: 1 }}>
+              <Box sx={{mt:2}}>
+                <FormControl>
                   <RadioGroup
                     row
                     aria-labelledby="demo-row-radio-buttons-group-label"
@@ -113,17 +112,33 @@ const Features = () => {
                   >
                     <FormControlLabel
                       value="All"
-                      control={<Radio />}
+                      
+                      control={<Radio  defaultChecked  sx={{
+                        color: '#1976d2',
+                        '&.Mui-checked': {
+                          color: '#1976d2',
+                        },
+                      }}/>}
                       label="All"
                     />
                     <FormControlLabel
                       value="Active"
-                      control={<Radio />}
+                      control={<Radio  sx={{
+                        color: '#1976d2',
+                        '&.Mui-checked': {
+                          color: '#1976d2',
+                        },
+                      }}/>}
                       label="Active"
                     />
                     <FormControlLabel
                       value="Inactive"
-                      control={<Radio />}
+                      control={<Radio  sx={{
+                        color: '#1976d2',
+                        '&.Mui-checked': {
+                          color: '#1976d2',
+                        },
+                      }}/>}
                       label="Inactive"
                     />
                   </RadioGroup>
